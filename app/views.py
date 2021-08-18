@@ -15,7 +15,7 @@ profile = {
         'description': 'I develope web site'
         },
 
-    'otherSkills': ['SQL', 'HTML','Github', 'Git']
+    'otherSkills': ['SQL', 'HTML','Github', 'Git', 'CSS']
     
 
 }
