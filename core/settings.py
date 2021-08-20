@@ -94,14 +94,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dc29qsir98m0u8',
-        'USER': 'hciqztvnbuvajj',
-        'PASSWORD': '7d1141369e3eec14b4a3cff253557c61bd2d7ee5e2d9013915ca5b9d16aadac5',
-        'HOST': 'ec2-44-196-170-156.compute-1.amazonaws.com',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('DB_HOST'),
         'PORT': '5432',
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -151,3 +150,6 @@ STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if os.getcwdb() == '/app':
+    DEBUG = False
